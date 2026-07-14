@@ -1,6 +1,6 @@
 # Module Documentation — SSH/RDP Brute-Force SOC Playbook
 
-**Author:** Muhammad Mahad (Reg. 242306) · Air University (NCC)
+**Author:** Muhammad Umair · Air University (NCC)
 **Programme:** SafeX Solutions Blue Team — Defensive Exercise, Week 2 (Individual)
 **Group:** 17
 
