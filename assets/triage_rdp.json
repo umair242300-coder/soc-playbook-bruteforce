@@ -1,0 +1,53 @@
+[
+  {
+    "ip": "203.0.113.45",
+    "severity": "Critical",
+    "score": 100,
+    "failed": 9,
+    "succeeded": 1,
+    "distinct_users": [
+      "Administrator",
+      "admin",
+      "administrator",
+      "backup",
+      "helpdesk",
+      "sqladmin",
+      "svc_sql"
+    ],
+    "max_burst": 9,
+    "compromised": true,
+    "attack": [
+      "T1110 Brute Force",
+      "T1110.001 Password Guessing",
+      "T1078 Valid Accounts"
+    ],
+    "first_seen": "2026-01-10 03:12:01",
+    "last_seen": "2026-01-10 03:12:40",
+    "osint": {
+      "ip": "203.0.113.45",
+      "is_private": false,
+      "asn": "AS14061",
+      "asn_org": "DIGITALOCEAN-ASN",
+      "network": "203.0.113.0/24",
+      "country": "US",
+      "abuse_email": "abuse@digitalocean.com",
+      "reverse_dns": "vps-203-0-113-45.example-cloud.net",
+      "shodan_ports": [
+        22,
+        80,
+        443,
+        3389
+      ],
+      "shodan_tags": [
+        "cloud",
+        "self-signed"
+      ],
+      "shodan_hostnames": [
+        "vps-203-0-113-45.example-cloud.net"
+      ],
+      "shodan_last_seen": "2026-01-08",
+      "crtsh_hits": 2,
+      "errors": []
+    }
+  }
+]

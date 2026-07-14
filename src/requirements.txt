@@ -1,0 +1,7 @@
+# Core triage tool runs on the Python 3.9+ standard library alone.
+# The packages below are only needed for LIVE passive-OSINT enrichment
+# (they are optional; --offline mode needs none of them).
+
+ipwhois>=1.2.0     # WHOIS/RDAP lookup for source IP -> ASN, org, abuse contact
+shodan>=1.30.0     # Shodan host view (requires SHODAN_API_KEY env var)
+requests>=2.28.0   # crt.sh Certificate Transparency queries

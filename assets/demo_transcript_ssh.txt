@@ -1,0 +1,36 @@
+
+==============================================================================
+  SafeX Solutions SOC — Brute Force Triage Report
+  Generated: 2026-07-13 12:09:48
+==============================================================================
+SEVERITY SCORE  SOURCE IP        FAIL  OK USERS  ASN / ORG               CC
+------------------------------------------------------------------------------
+Critical   100  203.0.113.45       12   1     9  DIGITALOCEAN-ASN        US  <== COMPROMISE
+Critical    95  198.51.100.23      12   0     7  M247-EUROPE             NL
+Medium      50  192.0.2.77          6   0     2  CHINANET-BACKBONE       CN
+------------------------------------------------------------------------------
+
+PRIORITY DETAIL (Critical / High):
+
+  [Critical] 203.0.113.45   score=100
+    window       : 2026-01-10 03:14:22  ->  2026-01-10 03:15:02  (0m40s)
+    failed/burst : 12 total, max 12 in 5m
+    users tried  : admin, administrator, git, jenkins, oracle, postgres, root, test, ubuntu
+    ATT&CK       : T1110 Brute Force, T1110.001 Password Guessing, T1078 Valid Accounts
+    WHOIS        : AS14061 DIGITALOCEAN-ASN (US)  net=203.0.113.0/24
+    abuse        : abuse@digitalocean.com
+    Shodan       : ports=[22, 80, 443, 3389] tags=['cloud', 'self-signed'] seen=2026-01-08
+    crt.sh hits  : 2
+    -> ACTION    : ISOLATE affected host + force credential reset (compromise indicators present)
+
+  [Critical] 198.51.100.23   score=95
+    window       : 2026-01-10 03:41:10  ->  2026-01-10 03:41:31  (0m21s)
+    failed/burst : 12 total, max 12 in 5m
+    users tried  : admin, ftpuser, guest, pi, root, support, user
+    ATT&CK       : T1110 Brute Force, T1110.001 Password Guessing
+    WHOIS        : AS9009 M247-EUROPE (NL)  net=198.51.100.0/24
+    abuse        : abuse@m247.com
+    Shodan       : ports=[22, 5900] tags=['scanner', 'compromised'] seen=2026-01-10
+    crt.sh hits  : 0
+    -> ACTION    : Block source IP at edge FW; monitor for follow-on attempts
+

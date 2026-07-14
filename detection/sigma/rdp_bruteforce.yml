@@ -1,0 +1,40 @@
+title: RDP Brute Force Followed by Successful Logon
+id: 3b91e7d2-6a5c-42f0-88ee-rdp-bruteforce-001
+status: experimental
+description: >
+  Detects a burst of failed RDP logons (Event 4625, LogonType 10) from a single
+  source, optionally followed by a successful remote logon (Event 4624,
+  LogonType 10) — a strong credential-compromise indicator (T1110 -> T1078).
+author: Muhammad Mahad (SafeX Solutions Blue Team, Group 17)
+date: 2026-01-10
+references:
+  - https://attack.mitre.org/techniques/T1110/
+  - https://attack.mitre.org/techniques/T1078/
+logsource:
+  product: windows
+  service: security
+detection:
+  failed:
+    EventID: 4625
+    LogonType: 10
+  success:
+    EventID: 4624
+    LogonType: 10
+  timeframe: 5m
+  condition: failed | count() by IpAddress >= 5
+  # Correlation: same IpAddress appearing in `success` after `failed` burst
+  # escalates severity to Critical (handled by bruteforce_triage.py scoring).
+fields:
+  - IpAddress
+  - TargetUserName
+  - Status
+falsepositives:
+  - Users repeatedly failing NLA before a correct login
+  - Service accounts with expired passwords over RDP
+level: high
+tags:
+  - attack.credential_access
+  - attack.t1110
+  - attack.t1078
+  - attack.initial_access
+  - attack.t1133

@@ -1,0 +1,139 @@
+[
+  {
+    "ip": "203.0.113.45",
+    "severity": "Critical",
+    "score": 100,
+    "failed": 12,
+    "succeeded": 1,
+    "distinct_users": [
+      "admin",
+      "administrator",
+      "git",
+      "jenkins",
+      "oracle",
+      "postgres",
+      "root",
+      "test",
+      "ubuntu"
+    ],
+    "max_burst": 12,
+    "compromised": true,
+    "attack": [
+      "T1110 Brute Force",
+      "T1110.001 Password Guessing",
+      "T1078 Valid Accounts"
+    ],
+    "first_seen": "2026-01-10 03:14:22",
+    "last_seen": "2026-01-10 03:15:02",
+    "osint": {
+      "ip": "203.0.113.45",
+      "is_private": false,
+      "asn": "AS14061",
+      "asn_org": "DIGITALOCEAN-ASN",
+      "network": "203.0.113.0/24",
+      "country": "US",
+      "abuse_email": "abuse@digitalocean.com",
+      "reverse_dns": "vps-203-0-113-45.example-cloud.net",
+      "shodan_ports": [
+        22,
+        80,
+        443,
+        3389
+      ],
+      "shodan_tags": [
+        "cloud",
+        "self-signed"
+      ],
+      "shodan_hostnames": [
+        "vps-203-0-113-45.example-cloud.net"
+      ],
+      "shodan_last_seen": "2026-01-08",
+      "crtsh_hits": 2,
+      "errors": []
+    }
+  },
+  {
+    "ip": "198.51.100.23",
+    "severity": "Critical",
+    "score": 95,
+    "failed": 12,
+    "succeeded": 0,
+    "distinct_users": [
+      "admin",
+      "ftpuser",
+      "guest",
+      "pi",
+      "root",
+      "support",
+      "user"
+    ],
+    "max_burst": 12,
+    "compromised": false,
+    "attack": [
+      "T1110 Brute Force",
+      "T1110.001 Password Guessing"
+    ],
+    "first_seen": "2026-01-10 03:41:10",
+    "last_seen": "2026-01-10 03:41:31",
+    "osint": {
+      "ip": "198.51.100.23",
+      "is_private": false,
+      "asn": "AS9009",
+      "asn_org": "M247-EUROPE",
+      "network": "198.51.100.0/24",
+      "country": "NL",
+      "abuse_email": "abuse@m247.com",
+      "reverse_dns": null,
+      "shodan_ports": [
+        22,
+        5900
+      ],
+      "shodan_tags": [
+        "scanner",
+        "compromised"
+      ],
+      "shodan_hostnames": [],
+      "shodan_last_seen": "2026-01-10",
+      "crtsh_hits": 0,
+      "errors": []
+    }
+  },
+  {
+    "ip": "192.0.2.77",
+    "severity": "Medium",
+    "score": 50,
+    "failed": 6,
+    "succeeded": 0,
+    "distinct_users": [
+      "admin",
+      "root"
+    ],
+    "max_burst": 1,
+    "compromised": false,
+    "attack": [
+      "T1110 Brute Force"
+    ],
+    "first_seen": "2026-01-10 05:10:04",
+    "last_seen": "2026-01-10 06:25:33",
+    "osint": {
+      "ip": "192.0.2.77",
+      "is_private": false,
+      "asn": "AS4134",
+      "asn_org": "CHINANET-BACKBONE",
+      "network": "192.0.2.0/24",
+      "country": "CN",
+      "abuse_email": "anti-spam@ns.chinanet.cn.net",
+      "reverse_dns": null,
+      "shodan_ports": [
+        22
+      ],
+      "shodan_tags": [
+        "scanner"
+      ],
+      "shodan_hostnames": [],
+      "shodan_last_seen": "2026-01-09",
+      "crtsh_hits": 0,
+      "errors": []
+    }
+  }
+]

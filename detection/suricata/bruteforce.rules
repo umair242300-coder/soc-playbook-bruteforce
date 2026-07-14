@@ -1,0 +1,34 @@
+# Suricata rules — SSH/RDP brute-force detection (rate-based threshold)
+# Author: Muhammad Mahad (SafeX Solutions Blue Team, Group 17)
+# Notes:
+#   * $HOME_NET / $EXTERNAL_NET must be defined in suricata.yaml.
+#   * "threshold" fires once per <count> connections from a src within <seconds>.
+#   * These flag ATTEMPT VOLUME; confirmation of compromise comes from host
+#     auth logs (see Sigma rules + bruteforce_triage.py), per the playbook.
+
+# --- SSH: >=5 new connections from one external source in 60s ---------------
+alert tcp $EXTERNAL_NET any -> $HOME_NET 22 ( \
+    msg:"SAFEX SSH brute-force attempt (rate threshold) - T1110"; \
+    flow:to_server; flags:S; \
+    threshold: type both, track by_src, count 5, seconds 60; \
+    classtype:attempted-admin; \
+    metadata: mitre_technique_id T1110, service ssh; \
+    sid:9000101; rev:1; )
+
+# --- RDP: >=5 new connections from one external source in 60s ---------------
+alert tcp $EXTERNAL_NET any -> $HOME_NET 3389 ( \
+    msg:"SAFEX RDP brute-force attempt (rate threshold) - T1110"; \
+    flow:to_server; flags:S; \
+    threshold: type both, track by_src, count 5, seconds 60; \
+    classtype:attempted-admin; \
+    metadata: mitre_technique_id T1110, service rdp; \
+    sid:9000102; rev:1; )
+
+# --- SSH: sustained/low-and-slow (>=15 conns in 1 hour) ---------------------
+alert tcp $EXTERNAL_NET any -> $HOME_NET 22 ( \
+    msg:"SAFEX SSH low-and-slow brute force (hourly threshold) - T1110"; \
+    flow:to_server; flags:S; \
+    threshold: type threshold, track by_src, count 15, seconds 3600; \
+    classtype:attempted-admin; \
+    metadata: mitre_technique_id T1110, service ssh; \
+    sid:9000103; rev:1; )
