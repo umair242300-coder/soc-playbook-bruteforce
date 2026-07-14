@@ -32,7 +32,7 @@ plug into a Wazuh/Suricata SOC.
 ## Quickstart
 
 ```bash
-git clone <repo-url> \&\& cd soc-playbook-bruteforce/src
+git clone https://github.com/umair242300-coder/soc-playbook-bruteforce  \&\& cd soc-playbook-bruteforce/src
 pip install -r requirements.txt          # optional: only for live OSINT
 
 # Offline demo — no internet / API keys required
