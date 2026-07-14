@@ -1,7 +1,7 @@
 # SOC Playbook — SSH / RDP Brute Force 🛡️
 
 > \*\*SafeX Solutions Blue Team — Defensive Exercise · Week 2 (Individual)\*\*
-> Muhammad Mahad (Reg. 242306) · Air University (NCC) · Group 17
+> Muhammad Umair· Air University (NCC) · Group 17
 
 A complete SOC incident-response module for **remote-authentication brute-force
 attacks** (OpenSSH \& Windows RDP): a professional NIST SP 800-61r2 playbook, a
