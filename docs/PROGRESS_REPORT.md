@@ -2,7 +2,7 @@
 
 **Project:** SafeX Solutions Blue Team — Defensive Exercise
 **Module:** SOC Playbook Writing — SSH/RDP Brute Force (Individual)
-**Author:** Muhammad Mahad (Reg. 242306) · Group 17
+**Author:** Muhammad Umair  · Group 17
 **Week:** 2 · **Difficulty:** Advanced
 
 ---
